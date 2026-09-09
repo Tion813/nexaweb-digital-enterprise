@@ -1,0 +1,260 @@
+.header {
+    width: 100%;
+  
+    position: fixed;
+    top: 0;
+    left: 0;
+  
+    z-index: 1000;
+  
+    background: rgba(248, 250, 252, 0.92);
+  
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  
+    border-bottom: 1px solid #e5e9ef;
+  }
+  
+  .header-container {
+    width: min(1200px, 92%);
+    height: 78px;
+  
+    margin: 0 auto;
+  
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Logo */
+  
+  .logo {
+    position: relative;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 150px;
+    height: auto;
+    display: block;
+  }
+
+  @media (max-width: 800px) {
+    .logo img {
+      width: 130px;
+    }
+  }
+  
+  /* Desktop Navigation */
+  
+  .nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  
+  .nav a {
+    color: #66717f;
+  
+    font-size: 0.95rem;
+    font-weight: 500;
+  
+    transition: color 0.3s ease;
+  }
+  
+  .nav a:hover {
+    color: #161a1f;
+  }
+  
+  /* Desktop CTA */
+  
+  .header-cta {
+    padding: 0.75rem 1.25rem;
+  
+    border-radius: 8px;
+  
+    background: #161a1f;
+    color: #ffffff;
+  
+    font-size: 0.9rem;
+    font-weight: 600;
+  
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease;
+  }
+  
+  .header-cta:hover {
+    background: #0b0d10;
+    transform: translateY(-2px);
+  }
+  
+  /* Mobile CTA - hidden on desktop */
+  
+  .mobile-nav-cta {
+    display: none;
+  }
+  
+  /* Hamburger */
+  
+  .menu-toggle {
+    width: 42px;
+    height: 42px;
+  
+    padding: 0;
+  
+    display: none;
+  
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+  
+    border: 1px solid #d5dae1;
+    border-radius: 7px;
+  
+    background: #ffffff;
+  }
+  
+  .menu-toggle span {
+    width: 18px;
+    height: 1.5px;
+  
+    display: block;
+  
+    background: #161a1f;
+  
+    transition:
+      transform 0.3s ease,
+      opacity 0.3s ease;
+  }
+  
+  /* Hamburger → X */
+  
+  .menu-toggle.menu-active span:nth-child(1) {
+    transform: translateY(6.5px) rotate(45deg);
+  }
+  
+  .menu-toggle.menu-active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.menu-active span:nth-child(3) {
+    transform: translateY(-6.5px) rotate(-45deg);
+  }
+  
+  /* Mobile */
+  
+  @media (max-width: 800px) {
+    .header-container {
+      height: 70px;
+    }
+  
+    .header-cta {
+      display: none;
+    }
+  
+    .menu-toggle {
+      display: flex;
+      position: relative;
+      z-index: 1002;
+    }
+  
+    .nav {
+      width: 100%;
+  
+      position: fixed;
+  
+      top: 70px;
+      left: 0;
+  
+      padding: 1.5rem 4% 2rem;
+  
+      display: flex;
+      align-items: stretch;
+      flex-direction: column;
+      gap: 0;
+  
+      background: rgba(248, 250, 252, 0.98);
+  
+      border-bottom: 1px solid #e5e9ef;
+  
+      box-shadow: 0 20px 40px rgba(11, 13, 16, 0.08);
+  
+      transform: translateY(-20px);
+      opacity: 0;
+      visibility: hidden;
+  
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        visibility 0.3s ease;
+    }
+  
+    .nav.nav-open {
+      transform: translateY(0);
+      opacity: 1;
+      visibility: visible;
+    }
+  
+    .nav a {
+      padding: 1rem 0;
+  
+      border-bottom: 1px solid #e5e9ef;
+  
+      color: #161a1f;
+  
+      font-size: 1rem;
+      font-weight: 600;
+    }
+  
+    .nav a:last-child {
+      border-bottom: none;
+    }
+  
+    .nav a:hover {
+      color: #66717f;
+    }
+  
+    .mobile-nav-cta {
+      display: block !important;
+  
+      margin-top: 1rem;
+  
+      padding: 0.9rem 1rem !important;
+  
+      border: none !important;
+      border-radius: 7px;
+  
+      background: #161a1f;
+  
+      color: #ffffff !important;
+  
+      text-align: center;
+  
+      transition:
+        transform 0.3s ease,
+        background 0.3s ease;
+    }
+  
+    .mobile-nav-cta:hover {
+      background: #0b0d10 !important;
+      color: #ffffff !important;
+      transform: translateY(-2px);
+    }
+  }
+  
+  /* Small phones */
+  
+  @media (max-width: 400px) {
+    .header-container {
+      width: 90%;
+    }
+  
+    .nav {
+      padding-left: 5%;
+      padding-right: 5%;
+    }
+  }

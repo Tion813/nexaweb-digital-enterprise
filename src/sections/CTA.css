@@ -1,0 +1,257 @@
+.cta {
+    padding: 130px 0;
+    background: #0b0d10;
+    color: #ffffff;
+    overflow: hidden;
+  }
+  
+  .cta-container {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+  
+    min-height: 500px;
+  
+    display: grid;
+    grid-template-columns: 1fr 0.8fr;
+    align-items: center;
+    gap: 5rem;
+  }
+  
+  .cta-content {
+    max-width: 700px;
+  }
+  
+  .cta-content h2 {
+    margin-bottom: 1.5rem;
+  
+    font-size: clamp(3rem, 6vw, 5.5rem);
+    line-height: 0.98;
+    letter-spacing: -0.06em;
+  }
+  
+  .cta-content h2 span {
+    display: block;
+    color: #aeb7c5;
+  }
+  
+  .cta-content p {
+    max-width: 580px;
+    margin-bottom: 2.5rem;
+  
+    color: #aeb7c5;
+  
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+  
+  .cta-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+  
+    padding: 1rem 1.5rem;
+  
+    background: #ffffff;
+    color: #0b0d10;
+  
+    border-radius: 7px;
+  
+    font-size: 0.9rem;
+    font-weight: 700;
+  
+    transition:
+      transform 0.3s ease,
+      background 0.3s ease,
+      gap 0.3s ease;
+  }
+  
+  .cta-button:hover {
+    transform: translateY(-4px);
+    background: #e5e9ef;
+    gap: 1rem;
+  }
+  
+  /* Visual */
+  
+  .cta-visual {
+    min-height: 420px;
+  
+    position: relative;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .cta-ring {
+    position: absolute;
+  
+    border: 1px solid #6f7886;
+    border-radius: 50%;
+  
+    opacity: 0.3;
+  }
+  
+  .ring-one {
+    width: 260px;
+    height: 260px;
+  
+    transform: rotate(20deg);
+  
+    animation: ctaOrbitOne 8s ease-in-out infinite;
+  }
+  
+  .ring-two {
+    width: 340px;
+    height: 160px;
+  
+    transform: rotate(-35deg);
+  
+    animation: ctaOrbitTwo 10s ease-in-out infinite;
+  }
+  
+  .ring-three {
+    width: 420px;
+    height: 190px;
+  
+    transform: rotate(35deg);
+  
+    animation: ctaOrbitThree 13s ease-in-out infinite reverse;
+  }
+  
+  .cta-center {
+    width: 110px;
+    height: 110px;
+  
+    position: relative;
+    z-index: 2;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    border: 1px solid #aeb7c5;
+    border-radius: 50%;
+  
+    background: #161a1f;
+  
+    box-shadow: 0 0 70px rgba(174, 183, 197, 0.15);
+  
+    animation: ctaFloat 5s ease-in-out infinite;
+  }
+  
+  .cta-center span {
+    font-size: 2.5rem;
+    font-weight: 800;
+    letter-spacing: -0.08em;
+  }
+  
+  /* Animations */
+  
+  @keyframes ctaFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+  
+  @keyframes ctaOrbitOne {
+    0%,
+    100% {
+      transform: rotate(20deg) scale(1);
+    }
+  
+    50% {
+      transform: rotate(35deg) scale(1.05);
+    }
+  }
+  
+  @keyframes ctaOrbitTwo {
+    0%,
+    100% {
+      transform: rotate(-35deg);
+    }
+  
+    50% {
+      transform: rotate(-20deg);
+    }
+  }
+  
+  @keyframes ctaOrbitThree {
+    0%,
+    100% {
+      transform: rotate(35deg);
+    }
+  
+    50% {
+      transform: rotate(50deg);
+    }
+  }
+  
+  /* Responsive */
+  
+  @media (max-width: 900px) {
+    .cta-container {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+  
+    .cta-content {
+      max-width: 750px;
+    }
+  
+    .cta-visual {
+      min-height: 350px;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .cta {
+      padding: 90px 0;
+    }
+  
+    .cta-content h2 {
+      font-size: clamp(2.7rem, 13vw, 4rem);
+    }
+  
+    .cta-content p {
+      font-size: 0.9rem;
+    }
+  
+    .cta-button {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    .cta-visual {
+      min-height: 280px;
+    }
+  
+    .ring-one {
+      width: 190px;
+      height: 190px;
+    }
+  
+    .ring-two {
+      width: 270px;
+      height: 125px;
+    }
+  
+    .ring-three {
+      width: 330px;
+      height: 150px;
+    }
+  
+    .cta-center {
+      width: 85px;
+      height: 85px;
+    }
+  
+    .cta-center span {
+      font-size: 2rem;
+    }
+  }
